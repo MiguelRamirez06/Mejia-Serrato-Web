@@ -119,7 +119,7 @@ onBeforeUnmount(() => timeline?.kill())
 <template>
   <div
     ref="root"
-    class="group relative h-full w-full select-none overflow-hidden rounded-[20px] border border-gold/30 bg-ink shadow-card"
+    class="group relative h-full w-full touch-pan-y select-none overflow-hidden rounded-[20px] border border-gold/30 bg-ink shadow-card"
     :class="dragging ? 'cursor-grabbing' : 'cursor-ew-resize'"
     @pointerdown="onPointerDown"
     @pointermove="onPointerMove"

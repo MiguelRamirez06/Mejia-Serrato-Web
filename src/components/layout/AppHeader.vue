@@ -26,11 +26,14 @@ function onScroll() {
 
 function goTo(id) {
   menuOpen.value = false
+  lockScroll(false)
   const target = document.getElementById(id)
   if (!target) return
-  const lenis = window.__lenis
-  if (lenis) lenis.scrollTo(target, { offset: -60, duration: 1.2 })
-  else target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  requestAnimationFrame(() => {
+    const lenis = window.__lenis
+    if (lenis) lenis.scrollTo(target, { offset: -60, duration: 1.2 })
+    else target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  })
 }
 
 function lockScroll(lock) {
