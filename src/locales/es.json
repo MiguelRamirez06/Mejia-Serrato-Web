@@ -81,11 +81,11 @@
       "next": "Imagen siguiente"
     },
     "items": [
-      { "title": "Lobby de Mármol Pulido", "caption": "Moreno Valley" },
-      { "title": "Ducha de Travertino", "caption": "Riverside" },
-      { "title": "Isla de Granito", "caption": "Corona" },
-      { "title": "Patio de Piedra Sellado", "caption": "Redlands" },
-      { "title": "Entrada Restaurada", "caption": "San Bernardino" }
+      { "title": "Lobby de Mármol Pulido", "location": "Moreno Valley", "service": "Restauración de Mármol", "size": "large" },
+      { "title": "Ducha de Travertino", "location": "Riverside", "service": "Travertino y Caliza", "size": "normal" },
+      { "title": "Isla de Granito", "location": "Corona", "service": "Cuidado del Granito", "size": "normal" },
+      { "title": "Patio de Piedra Sellado", "location": "Redlands", "service": "Limpieza y Sellado", "size": "half" },
+      { "title": "Entrada Restaurada", "location": "San Bernardino", "service": "Pulido de Piedra", "size": "wide" }
     ]
   },
   "surfaces": {

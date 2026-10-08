@@ -81,11 +81,11 @@
       "next": "Next image"
     },
     "items": [
-      { "title": "Polished Marble Lobby", "caption": "Moreno Valley" },
-      { "title": "Travertine Shower", "caption": "Riverside" },
-      { "title": "Granite Kitchen Island", "caption": "Corona" },
-      { "title": "Sealed Stone Patio", "caption": "Redlands" },
-      { "title": "Restored Entryway", "caption": "San Bernardino" }
+      { "title": "Polished Marble Lobby", "location": "Moreno Valley", "service": "Marble Restoration", "size": "large" },
+      { "title": "Travertine Shower", "location": "Riverside", "service": "Travertine & Limestone", "size": "normal" },
+      { "title": "Granite Kitchen Island", "location": "Corona", "service": "Granite Care", "size": "normal" },
+      { "title": "Sealed Stone Patio", "location": "Redlands", "service": "Cleaning & Sealing", "size": "half" },
+      { "title": "Restored Entryway", "location": "San Bernardino", "service": "Stone Polishing", "size": "wide" }
     ]
   },
   "surfaces": {

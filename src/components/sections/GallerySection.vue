@@ -18,9 +18,10 @@ const images = [
   '/works/work_5.webp',
 ]
 
-const track = ref(null)
+const speeds = [5, 2, 3, 6, 3]
+
+const section = ref(null)
 const lightboxImg = ref(null)
-const carouselIndex = ref(0)
 const openIndex = ref(-1)
 const isOpen = computed(() => openIndex.value >= 0)
 
@@ -29,46 +30,8 @@ const items = computed(() => {
   return tm('gallery.items')
 })
 
-const atStart = computed(() => carouselIndex.value <= 0)
-const atEnd = computed(() => carouselIndex.value >= items.value.length - 1)
-
-function perView() {
-  if (typeof window === 'undefined') return 1
-  if (window.innerWidth >= 1024) return 3
-  if (window.innerWidth >= 640) return 2
-  return 1
-}
-
-function stepSize() {
-  const el = track.value
-  if (!el) return 0
-  return el.clientWidth / perView()
-}
-
-function onScroll() {
-  const el = track.value
-  if (!el) return
-  const step = stepSize()
-  if (!step) return
-  carouselIndex.value = Math.round(el.scrollLeft / step)
-}
-
-function goTo(i) {
-  const el = track.value
-  if (!el) return
-  const clamped = Math.max(0, Math.min(i, items.value.length - 1))
-  el.scrollTo({
-    left: clamped * stepSize(),
-    behavior: prefersReducedMotion() ? 'auto' : 'smooth',
-  })
-}
-
-function nextSlide() {
-  goTo(carouselIndex.value + 1)
-}
-function prevSlide() {
-  goTo(carouselIndex.value - 1)
-}
+const pad = (n) => String(n).padStart(2, '0')
+const sizeClass = (size) => `size-${size || 'normal'}`
 
 /* ---------- Lightbox ---------- */
 function lockScroll(lock) {
@@ -102,15 +65,21 @@ function open(i, event) {
 
 function close() {
   const imgEl = lightboxImg.value
-  const finish = () => {
+  if (prefersReducedMotion() || !imgEl) {
     openIndex.value = -1
     lockScroll(false)
-  }
-  if (!imgEl || prefersReducedMotion()) {
-    finish()
     return
   }
-  gsap.to(imgEl, { opacity: 0, scale: 0.94, duration: 0.3, ease: 'power2.in', onComplete: finish })
+  gsap.to(imgEl, {
+    opacity: 0,
+    scale: 0.94,
+    duration: 0.3,
+    ease: 'power2.in',
+    onComplete: () => {
+      openIndex.value = -1
+      lockScroll(false)
+    },
+  })
 }
 
 function step(dir) {
@@ -151,13 +120,26 @@ onMounted(() => {
     scrollTrigger: { trigger: '#gallery', start: 'top 78%', once: true },
   })
 
-  gsap.from('.gallery-slide', {
-    opacity: 0,
-    y: 50,
-    duration: 0.9,
-    stagger: 0.1,
-    ease: 'power3.out',
-    scrollTrigger: { trigger: track.value, start: 'top 85%', once: true },
+  // Subtle inner parallax on desktop only — animates a wrapper so it never
+  // clashes with the CSS hover/scale transform on the <img>.
+  if (window.innerWidth < 1024) return
+  section.value?.querySelectorAll('.js-parallax').forEach((el) => {
+    const speed = parseFloat(el.dataset.speed || '0')
+    if (!speed) return
+    gsap.fromTo(
+      el,
+      { yPercent: -speed },
+      {
+        yPercent: speed,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: el.closest('.gallery-tile'),
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true,
+        },
+      },
+    )
   })
 })
 
@@ -168,90 +150,65 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <section id="gallery" class="relative bg-beige py-24 sm:py-32">
+  <section id="gallery" ref="section" class="relative bg-ink py-24 sm:py-32">
     <div class="container-x">
       <div class="mx-auto max-w-2xl text-center">
         <SectionEyebrow :text="t('gallery.eyebrow')" centered class="gallery-head" />
-        <h2 class="gallery-head mt-5 font-display text-ink" style="font-size: clamp(38px, 6vw, 64px)">
+        <h2 class="gallery-head mt-5 font-display text-smoke" style="font-size: clamp(38px, 6vw, 64px)">
           {{ t('gallery.title') }}
         </h2>
-        <p class="gallery-head mt-4 text-base text-ink/60">{{ t('gallery.subtitle') }}</p>
-      </div>
-
-      <!-- Controls -->
-      <div class="mt-12 flex items-center justify-end gap-3">
-        <button
-          type="button"
-          class="flex h-11 w-11 items-center justify-center rounded-full border border-ink/20 text-ink transition-all duration-300 hover:border-gold hover:bg-gold hover:text-smoke disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:border-ink/20 disabled:hover:bg-transparent disabled:hover:text-ink"
-          :disabled="atStart"
-          :aria-label="t('gallery.lightbox.prev')"
-          @click="prevSlide"
-        >
-          <i class="fa-solid fa-arrow-left" aria-hidden="true" />
-        </button>
-        <button
-          type="button"
-          class="flex h-11 w-11 items-center justify-center rounded-full border border-ink/20 text-ink transition-all duration-300 hover:border-gold hover:bg-gold hover:text-smoke disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:border-ink/20 disabled:hover:bg-transparent disabled:hover:text-ink"
-          :disabled="atEnd"
-          :aria-label="t('gallery.lightbox.next')"
-          @click="nextSlide"
-        >
-          <i class="fa-solid fa-arrow-right" aria-hidden="true" />
-        </button>
+        <p class="gallery-head mt-4 text-base text-smoke/60">{{ t('gallery.subtitle') }}</p>
       </div>
     </div>
 
-    <!-- Carousel -->
-    <div class="container-x">
-      <div
-        ref="track"
-        class="no-scrollbar mt-6 flex snap-x snap-mandatory overflow-x-auto scroll-smooth"
-        @scroll.passive="onScroll"
-      >
-        <div
+    <!-- Editorial mosaic -->
+    <div class="mt-12 px-4 sm:mt-16 sm:px-6 lg:px-8">
+      <div class="gallery-mosaic mx-auto max-w-[1600px]">
+        <button
           v-for="(item, i) in items"
           :key="i"
-          class="gallery-slide w-full shrink-0 snap-start px-3 sm:w-1/2 lg:w-1/3"
+          type="button"
+          class="gallery-tile group relative w-full overflow-hidden rounded-2xl border border-smoke/10 bg-ink text-left outline-none transition-[box-shadow,transform] duration-500 ease-cinematic hover:shadow-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+          :class="sizeClass(item.size)"
+          :aria-label="`${item.title} — ${item.location}`"
+          @click="open(i, $event)"
         >
-          <button
-            type="button"
-            class="group relative block aspect-[4/5] w-full overflow-hidden rounded-2xl bg-ink/5 text-left will-change-transform"
-            :aria-label="item.title"
-            @click="open(i, $event)"
-          >
+          <div class="js-parallax absolute inset-0 will-change-transform" :data-speed="speeds[i % speeds.length]">
             <img
               :src="images[i]"
               :alt="item.title"
               loading="lazy"
-              class="h-full w-full object-cover transition-transform duration-700 ease-cinematic group-hover:scale-105"
+              decoding="async"
+              class="h-full w-full scale-[1.15] object-cover transition-transform duration-[900ms] ease-cinematic group-hover:scale-[1.25]"
             />
-            <div
-              class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-ink/90 via-ink/20 to-transparent p-5 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-            >
-              <span class="font-display text-xl text-gold">{{ item.title }}</span>
-              <span class="text-[11px] uppercase tracking-[0.25em] text-smoke/70">{{ item.caption }}</span>
-            </div>
-            <i
-              class="fa-solid fa-expand absolute right-4 top-4 text-sm text-smoke opacity-0 transition-opacity duration-500 group-hover:opacity-90"
-              aria-hidden="true"
-            />
-          </button>
-        </div>
-      </div>
-    </div>
+          </div>
 
-    <!-- Dots -->
-    <div class="mt-8 flex justify-center gap-2.5">
-      <button
-        v-for="(item, i) in items"
-        :key="i"
-        type="button"
-        class="h-2 rounded-full transition-all duration-400 ease-cinematic"
-        :class="carouselIndex === i ? 'w-7 bg-gold' : 'w-2 bg-ink/25 hover:bg-ink/50'"
-        :aria-label="item.title"
-        :aria-current="carouselIndex === i"
-        @click="goTo(i)"
-      />
+          <div
+            class="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent opacity-95"
+          />
+
+          <div class="pointer-events-none absolute inset-x-0 bottom-0 p-4 sm:p-6">
+            <div class="flex items-center gap-3 text-gold">
+              <span class="text-[11px] font-medium tracking-[0.3em]">{{ pad(i + 1) }}</span>
+              <span class="h-px flex-1 bg-gold/30" />
+            </div>
+            <h3 class="mt-2 font-display text-xl leading-tight text-smoke sm:text-2xl lg:text-[28px]">
+              {{ item.title }}
+            </h3>
+            <p class="mt-1 text-[11px] uppercase tracking-[0.22em] text-smoke/60">
+              {{ item.location }}<span v-if="item.service" class="text-gold/80"> · {{ item.service }}</span>
+            </p>
+            <span
+              class="mt-3 block h-[3px] w-10 rounded-full bg-gold-gradient transition-all duration-500 ease-cinematic group-hover:w-20"
+            />
+          </div>
+
+          <i
+            class="fa-solid fa-expand absolute right-4 top-4 text-sm text-smoke/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            aria-hidden="true"
+          />
+        </button>
+      </div>
     </div>
 
     <Teleport to="body">
@@ -291,7 +248,9 @@ onBeforeUnmount(() => {
             />
             <figcaption class="mt-4 text-center">
               <span class="font-display text-xl text-gold">{{ items[openIndex]?.title }}</span>
-              <span class="ml-3 text-[11px] uppercase tracking-[0.25em] text-smoke/60">{{ items[openIndex]?.caption }}</span>
+              <span class="ml-3 text-[11px] uppercase tracking-[0.25em] text-smoke/60">
+                {{ items[openIndex]?.location }}
+              </span>
             </figcaption>
           </figure>
 
@@ -310,6 +269,76 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
+/* Mobile & tablet: balanced 2-column masonry with a full-width feature tile.
+   CSS multi-column avoids the empty gaps a 2-col grid would leave and keeps
+   varied image heights, so it reads as a real mosaic instead of a single stack. */
+.gallery-mosaic {
+  column-count: 2;
+  column-gap: 0.75rem;
+}
+
+.gallery-mosaic > .gallery-tile {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.75rem;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+}
+
+.size-large {
+  column-span: all;
+  aspect-ratio: 16 / 10;
+}
+.size-normal {
+  aspect-ratio: 3 / 4;
+}
+.size-half {
+  aspect-ratio: 1 / 1;
+}
+.size-wide {
+  aspect-ratio: 4 / 5;
+}
+
+@media (min-width: 640px) {
+  .gallery-mosaic {
+    column-gap: 1rem;
+  }
+  .gallery-mosaic > .gallery-tile {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Desktop: 12-column editorial grid with variable row spans */
+@media (min-width: 1024px) {
+  .gallery-mosaic {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-auto-rows: 80px;
+    gap: 1.25rem;
+    column-count: auto;
+  }
+  .gallery-mosaic > .gallery-tile {
+    margin-bottom: 0;
+    aspect-ratio: auto;
+  }
+  .size-large {
+    grid-column: span 7;
+    grid-row: span 6;
+  }
+  .size-normal {
+    grid-column: span 5;
+    grid-row: span 3;
+  }
+  .size-half {
+    grid-column: span 5;
+    grid-row: span 4;
+  }
+  .size-wide {
+    grid-column: span 7;
+    grid-row: span 4;
+  }
+}
+
 .lb-enter-active,
 .lb-leave-active {
   transition: opacity 0.35s ease;
