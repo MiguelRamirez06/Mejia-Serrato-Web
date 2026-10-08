@@ -1,0 +1,149 @@
+{
+  "common": {
+    "freeQuote": "Presupuesto Gratis",
+    "callNow": "Llamar Ahora",
+    "whatsappMessage": "Hola, quiero un presupuesto gratis para restauración de piedra.",
+    "menu": "Menú",
+    "close": "Cerrar"
+  },
+  "header": {
+    "tagline": "Restauración de Piedra",
+    "nav": {
+      "services": "Servicios",
+      "gallery": "Galería",
+      "process": "Proceso",
+      "contact": "Contacto"
+    }
+  },
+  "hero": {
+    "eyebrow": "Restauración de Piedra · Moreno Valley, CA",
+    "titleWords": ["Devolvemos", "el", "Brillo", "Original", "a", "tu", "Piedra"],
+    "subtitle": "Pulido, limpieza y restauración expertos para mármol, granito, travertino y caliza — pisos, duchas y encimeras.",
+    "cta": "Solicita tu Presupuesto Gratis",
+    "scroll": "Desplázate para explorar"
+  },
+  "beforeAfter": {
+    "eyebrow": "La Transformación",
+    "title": "Mira la Diferencia",
+    "subtitle": "Arrastra el control para descubrir lo que la restauración profesional puede lograr.",
+    "drag": "Arrastra para revelar",
+    "before": "Antes",
+    "after": "Después",
+    "cta": "Solicita tu Presupuesto Gratis",
+    "tabs": {
+      "floors": "Pisos",
+      "showers": "Duchas",
+      "countertops": "Encimeras"
+    },
+    "captions": {
+      "floors": "Piso de mármol pulido restaurado a un acabado espejo",
+      "showers": "Ducha de travertino revivida y sellada",
+      "countertops": "Encimera de granito limpiada, pulida y protegida"
+    }
+  },
+  "services": {
+    "eyebrow": "Lo Que Hacemos",
+    "title": "Nuestros Servicios",
+    "items": [
+      {
+        "title": "Pulido de Piedra",
+        "desc": "Pulido con diamante que devuelve a la piedra opaca un brillo intenso y duradero."
+      },
+      {
+        "title": "Limpieza y Sellado",
+        "desc": "Limpieza profunda y sellado protector que defiende de manchas y humedad."
+      },
+      {
+        "title": "Restauración de Mármol",
+        "desc": "Desbaste y pulido para eliminar rayones, marcas y desgaste del mármol."
+      },
+      {
+        "title": "Cuidado del Granito",
+        "desc": "Limpieza y pulido especializados que preservan la belleza natural del granito."
+      },
+      {
+        "title": "Travertino y Caliza",
+        "desc": "Restauración cuidadosa que respeta el carácter poroso y orgánico de estas piedras."
+      },
+      {
+        "title": "Pisos, Duchas y Encimeras",
+        "desc": "Cuidado completo para las superficies donde vives — por dentro y por fuera."
+      }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "Nuestro Trabajo",
+    "title": "Proyectos Recientes",
+    "subtitle": "Una selección de superficies que hemos revivido en el Inland Empire.",
+    "lightbox": {
+      "close": "Cerrar",
+      "prev": "Imagen anterior",
+      "next": "Imagen siguiente"
+    },
+    "items": [
+      { "title": "Lobby de Mármol Pulido", "caption": "Moreno Valley" },
+      { "title": "Ducha de Travertino", "caption": "Riverside" },
+      { "title": "Isla de Granito", "caption": "Corona" },
+      { "title": "Patio de Piedra Sellado", "caption": "Redlands" },
+      { "title": "Entrada Restaurada", "caption": "San Bernardino" }
+    ]
+  },
+  "surfaces": {
+    "eyebrow": "Lo Que Restauramos",
+    "title": "Pisos, Duchas y Encimeras",
+    "tabs": {
+      "floors": "Pisos",
+      "showers": "Duchas",
+      "countertops": "Encimeras"
+    },
+    "floors": {
+      "title": "Pisos",
+      "desc": "Desde lobbies de mármol hasta patios de travertino, desbastamos, pulimos y abrillantamos pisos de piedra hasta un acabado impecable y de alto brillo.",
+      "bullets": ["Eliminación de rayones y marcas", "Acabado espejo", "Opciones antideslizantes", "Protección contra manchas"]
+    },
+    "showers": {
+      "title": "Duchas",
+      "desc": "El vapor, el sarro y el agua dura pasan factura. Restauramos duchas de travertino y mármol, y luego las sellamos para una protección duradera.",
+      "bullets": ["Eliminación de sarro y moho", "Detallado de juntas", "Sellado profundo", "Acabado resistente al moho"]
+    },
+    "countertops": {
+      "title": "Encimeras",
+      "desc": "Las encimeras de granito y mármol son el corazón de la cocina. Las limpiamos, pulimos y protegemos para que luzcan hermosas por años.",
+      "bullets": ["Limpieza apta para alimentos", "Pulido de bordes y superficie", "Sellado anti-manchas", "Reparación de rayones"]
+    }
+  },
+  "process": {
+    "eyebrow": "Cómo Funciona",
+    "title": "Nuestro Proceso",
+    "subtitle": "Un método probado de seis pasos — cuidadoso, limpio y adaptado a tu agenda.",
+    "steps": [
+      { "title": "Evaluación Gratuita", "desc": "Inspeccionamos tu piedra y recomendamos el tratamiento adecuado." },
+      { "title": "Preparación", "desc": "Protegemos las áreas cercanas y preparamos la superficie." },
+      { "title": "Limpieza Profunda", "desc": "Eliminamos años de suciedad, grasa y acumulación." },
+      { "title": "Pulido y Restauración", "desc": "El pulido con diamante devuelve profundidad, claridad y brillo." },
+      { "title": "Sellado y Protección", "desc": "Un sellador protector defiende de manchas y humedad." },
+      { "title": "Inspección Final", "desc": "Recorremos el trabajo contigo hasta que quedes encantado." }
+    ]
+  },
+  "serviceArea": {
+    "eyebrow": "Dónde Trabajamos",
+    "title": "Servimos a Moreno Valley y el Inland Empire",
+    "subtitle": "Con orgullo restauramos piedra en todo el Inland Empire.",
+    "cities": ["Moreno Valley", "Riverside", "San Bernardino", "Redlands", "Corona", "Perris", "Hemet"],
+    "note": "¿No sabes si estás en la zona? Pregúntanos — con gusto te ayudamos."
+  },
+  "finalCta": {
+    "title": "¿Listo para Ver tu Piedra Brillar de Nuevo?",
+    "subtitle": "Cuéntanos sobre tu proyecto y recibe hoy un presupuesto gratis y sin compromiso.",
+    "quote": "Solicita tu Presupuesto Gratis",
+    "call": "Llamar Ahora"
+  },
+  "footer": {
+    "tagline": "Restauración de Piedra",
+    "blurb": "Restauración profesional de piedra en Moreno Valley y el Inland Empire.",
+    "contactTitle": "Contacto",
+    "areasTitle": "Zona de Servicio",
+    "linksTitle": "Enlaces Rápidos",
+    "rights": "Todos los derechos reservados."
+  }
+}

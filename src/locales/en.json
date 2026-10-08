@@ -1,0 +1,149 @@
+{
+  "common": {
+    "freeQuote": "Free Quote",
+    "callNow": "Call Now",
+    "whatsappMessage": "Hello, I'd like a free quote for stone restoration.",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "header": {
+    "tagline": "Stone Restoration",
+    "nav": {
+      "services": "Services",
+      "gallery": "Gallery",
+      "process": "Process",
+      "contact": "Contact"
+    }
+  },
+  "hero": {
+    "eyebrow": "Stone Restoration · Moreno Valley, CA",
+    "titleWords": ["We", "Bring", "Stone", "Back", "to", "Life"],
+    "subtitle": "Expert polishing, cleaning and restoration for marble, granite, travertine and limestone — floors, showers and countertops.",
+    "cta": "Get a Free Quote",
+    "scroll": "Scroll to explore"
+  },
+  "beforeAfter": {
+    "eyebrow": "The Transformation",
+    "title": "See the Difference",
+    "subtitle": "Drag the slider to reveal what professional stone restoration can do.",
+    "drag": "Drag to reveal",
+    "before": "Before",
+    "after": "After",
+    "cta": "Get a Free Quote",
+    "tabs": {
+      "floors": "Floors",
+      "showers": "Showers",
+      "countertops": "Countertops"
+    },
+    "captions": {
+      "floors": "Polished marble flooring restored to a mirror finish",
+      "showers": "Travertine shower revived and sealed",
+      "countertops": "Granite countertop cleaned, polished and protected"
+    }
+  },
+  "services": {
+    "eyebrow": "What We Do",
+    "title": "Our Services",
+    "items": [
+      {
+        "title": "Stone Polishing",
+        "desc": "Diamond-honed polishing that brings dull stone back to a brilliant, lasting shine."
+      },
+      {
+        "title": "Cleaning & Sealing",
+        "desc": "Deep cleaning and protective sealing that guards against stains and moisture."
+      },
+      {
+        "title": "Marble Restoration",
+        "desc": "Grinding and honing to remove scratches, etching and wear from marble surfaces."
+      },
+      {
+        "title": "Granite Care",
+        "desc": "Specialized cleaning and polishing that preserves granite's natural beauty."
+      },
+      {
+        "title": "Travertine & Limestone",
+        "desc": "Gentle restoration that respects the porous, organic character of these stones."
+      },
+      {
+        "title": "Floors, Showers & Countertops",
+        "desc": "Complete care for the surfaces you live on — inside and out."
+      }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "Our Work",
+    "title": "Recent Projects",
+    "subtitle": "A selection of surfaces we've brought back to life across the Inland Empire.",
+    "lightbox": {
+      "close": "Close",
+      "prev": "Previous image",
+      "next": "Next image"
+    },
+    "items": [
+      { "title": "Polished Marble Lobby", "caption": "Moreno Valley" },
+      { "title": "Travertine Shower", "caption": "Riverside" },
+      { "title": "Granite Kitchen Island", "caption": "Corona" },
+      { "title": "Sealed Stone Patio", "caption": "Redlands" },
+      { "title": "Restored Entryway", "caption": "San Bernardino" }
+    ]
+  },
+  "surfaces": {
+    "eyebrow": "What We Restore",
+    "title": "Floors, Showers & Countertops",
+    "tabs": {
+      "floors": "Floors",
+      "showers": "Showers",
+      "countertops": "Countertops"
+    },
+    "floors": {
+      "title": "Floors",
+      "desc": "From marble lobbies to travertine patios, we grind, hone and polish stone floors to a flawless, high-gloss finish that transforms a space.",
+      "bullets": ["Scratch & etch removal", "Mirror-polish finish", "Slip-resistant options", "Stain protection"]
+    },
+    "showers": {
+      "title": "Showers",
+      "desc": "Steam, soap scum and hard water take a toll. We restore travertine and marble showers, then seal them for lasting protection.",
+      "bullets": ["Soap scum & mildew removal", "Grout-line detailing", "Deep sealing", "Mold-resistant finish"]
+    },
+    "countertops": {
+      "title": "Countertops",
+      "desc": "Granite and marble counters are the heart of the kitchen. We clean, polish and protect them so they stay beautiful for years.",
+      "bullets": ["Food-safe cleaning", "Edge & surface polishing", "Stain sealing", "Scratch repair"]
+    }
+  },
+  "process": {
+    "eyebrow": "How It Works",
+    "title": "Our Process",
+    "subtitle": "A proven six-step method — careful, clean and built around your schedule.",
+    "steps": [
+      { "title": "Free Assessment", "desc": "We inspect your stone and recommend the right treatment." },
+      { "title": "Surface Preparation", "desc": "We protect surrounding areas and prepare the surface." },
+      { "title": "Deep Cleaning", "desc": "Years of dirt, grime and buildup are removed." },
+      { "title": "Polishing & Restoration", "desc": "Diamond polishing restores depth, clarity and shine." },
+      { "title": "Sealing & Protection", "desc": "A protective seal guards against stains and moisture." },
+      { "title": "Final Inspection", "desc": "We walk the job with you until you're delighted." }
+    ]
+  },
+  "serviceArea": {
+    "eyebrow": "Where We Work",
+    "title": "Serving Moreno Valley & the Inland Empire",
+    "subtitle": "Proudly restoring stone across the Inland Empire.",
+    "cities": ["Moreno Valley", "Riverside", "San Bernardino", "Redlands", "Corona", "Perris", "Hemet"],
+    "note": "Not sure if you're in range? Just ask — we're happy to help."
+  },
+  "finalCta": {
+    "title": "Ready to See Your Stone Shine Again?",
+    "subtitle": "Tell us about your project and get a free, no-obligation quote today.",
+    "quote": "Get a Free Quote",
+    "call": "Call Now"
+  },
+  "footer": {
+    "tagline": "Stone Restoration",
+    "blurb": "Professional stone restoration serving Moreno Valley and the Inland Empire.",
+    "contactTitle": "Contact",
+    "areasTitle": "Service Area",
+    "linksTitle": "Quick Links",
+    "rights": "All rights reserved."
+  }
+}
