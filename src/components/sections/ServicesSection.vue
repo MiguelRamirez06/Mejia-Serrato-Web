@@ -30,9 +30,6 @@ const items = computed(() => {
   return tm('services.items')
 })
 
-const atStart = computed(() => carouselIndex.value <= 0)
-const atEnd = computed(() => carouselIndex.value >= items.value.length - 1)
-
 function stepSize() {
   const el = scroller.value
   if (!el) return 0
@@ -56,12 +53,6 @@ function goTo(i) {
   const clamped = Math.max(0, Math.min(i, items.value.length - 1))
   el.scrollTo({ left: clamped * stepSize(), behavior: 'smooth' })
 }
-function nextSlide() {
-  goTo(carouselIndex.value + 1)
-}
-function prevSlide() {
-  goTo(carouselIndex.value - 1)
-}
 </script>
 
 <template>
@@ -73,28 +64,6 @@ function prevSlide() {
           <h2 class="mt-5 font-display text-ink" style="font-size: clamp(38px, 6vw, 64px)">
             {{ t('services.title') }}
           </h2>
-        </div>
-
-        <!-- Mobile carousel controls -->
-        <div class="flex items-center gap-3 lg:hidden">
-          <button
-            type="button"
-            class="flex h-11 w-11 items-center justify-center rounded-full border border-ink/20 text-ink transition-all duration-300 hover:border-gold hover:bg-gold hover:text-smoke disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:border-ink/20 disabled:hover:bg-transparent disabled:hover:text-ink"
-            :disabled="atStart"
-            :aria-label="t('gallery.lightbox.prev')"
-            @click="prevSlide"
-          >
-            <i class="fa-solid fa-arrow-left" aria-hidden="true" />
-          </button>
-          <button
-            type="button"
-            class="flex h-11 w-11 items-center justify-center rounded-full border border-ink/20 text-ink transition-all duration-300 hover:border-gold hover:bg-gold hover:text-smoke disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:border-ink/20 disabled:hover:bg-transparent disabled:hover:text-ink"
-            :disabled="atEnd"
-            :aria-label="t('gallery.lightbox.next')"
-            @click="nextSlide"
-          >
-            <i class="fa-solid fa-arrow-right" aria-hidden="true" />
-          </button>
         </div>
       </div>
 
