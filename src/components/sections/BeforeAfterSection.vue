@@ -16,9 +16,9 @@ const { t, locale } = useI18n()
 const tabs = ['floors', 'showers', 'countertops']
 
 const pairs = {
-  floors: { before: '/before_and_after/before_1.webp', after: '/before_and_after/after_1.webp' },
-  showers: { before: '/before_and_after/before_2.webp', after: '/before_and_after/after_2.webp' },
-  countertops: { before: '/before_and_after/before_3.webp', after: '/before_and_after/after_3.webp' },
+  floors: { before: '/before_and_after/floor_1_after.webp', after: '/before_and_after/floor_1_before.webp' },
+  showers: { before: '/before_and_after/shower_1_after.webp', after: '/before_and_after/shower_1_before.webp' },
+  countertops: { before: '/before_and_after/countertop_1_after.webp', after: '/before_and_after/countertop_1_before.webp' },
 }
 
 const activeTab = ref('floors')

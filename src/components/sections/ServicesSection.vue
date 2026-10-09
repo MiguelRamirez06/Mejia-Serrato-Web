@@ -17,12 +17,12 @@ const icons = [
 ]
 
 const images = [
-  '/works/work_3.webp',
-  '/works/work_5.webp',
-  '/works/work_2.webp',
-  '/before_and_after/after_3.webp',
-  '/before_and_after/after_4.webp',
-  '/works/work_4.webp',
+  '/services/stonepolish.webp',
+  '/services/cleaningandsealing.webp',
+  '/services/marblerestoration.webp',
+  '/services/granitecare.webp',
+  '/services/travertineandimestone.webp',
+  '/services/floorsshowersandcontertops.webp',
 ]
 
 const items = computed(() => {

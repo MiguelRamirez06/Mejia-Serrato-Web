@@ -12,9 +12,9 @@ const { t, tm, locale } = useI18n()
 
 const tabs = ['floors', 'showers', 'countertops']
 const images = {
-  floors: '/works/work_3.webp',
-  showers: '/works/work_2.webp',
-  countertops: '/works/work_4.webp',
+  floors: '/works/floors/floor_1.webp',
+  showers: '/works/showers/shower_1.webp',
+  countertops: '/works/countertops/countertop_2.webp',
 }
 const notes = ['fa-gem', 'fa-tint', 'fa-border-all']
 
