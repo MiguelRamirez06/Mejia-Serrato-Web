@@ -104,9 +104,20 @@ function goTo(id) {
       </div>
 
       <div class="h-px w-full bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
-      <p class="py-7 text-center text-[11px] uppercase tracking-[0.2em] text-smoke/40">
-        © {{ year }} Mejia Serrato Stone Restoration. {{ t('footer.rights') }}
-      </p>
+      <div class="py-7 text-center text-[11px] uppercase tracking-[0.2em] text-smoke/40">
+        <p>© {{ year }} Mejia Serrato Stone Restoration. {{ t('footer.rights') }}</p>
+        <p class="mt-3">
+          {{ t('footer.developedBy') }}
+          <a
+            href="https://www.linkedin.com/in/miguel-ramirez-marm020525/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-smoke/60 transition-colors hover:text-gold"
+          >
+            Miguel Ramirez
+          </a>
+        </p>
+      </div>
     </div>
   </footer>
 </template>
