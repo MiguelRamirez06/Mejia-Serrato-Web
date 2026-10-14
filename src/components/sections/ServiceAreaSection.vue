@@ -84,8 +84,8 @@ onBeforeUnmount(() => {
 <template>
   <section id="service-area" class="relative bg-smoke py-24 sm:py-32">
     <div class="container-x">
-      <div class="max-w-2xl">
-        <SectionEyebrow :text="t('serviceArea.eyebrow')" />
+      <div class="mx-auto max-w-3xl text-center">
+        <SectionEyebrow :text="t('serviceArea.eyebrow')" centered />
         <h2 class="mt-5 font-display text-ink" style="font-size: clamp(34px, 5.5vw, 58px)">
           {{ t('serviceArea.title') }}
         </h2>

@@ -4,6 +4,7 @@ import { useI18n } from 'vue-i18n'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import BaseButton from '../ui/BaseButton.vue'
+import SectionEyebrow from '../ui/SectionEyebrow.vue'
 import { whatsappLink } from '../../data/site'
 import { prefersReducedMotion } from '../../composables/useLenis'
 
@@ -98,7 +99,7 @@ onMounted(() => {
     <div class="noise" />
 
     <div ref="content" class="container-x relative z-10 flex flex-col items-center text-center">
-      <p class="eyebrow mb-6 text-gold">{{ t('hero.eyebrow') }}</p>
+      <SectionEyebrow :text="t('hero.eyebrow')" centered class="mb-6" />
 
       <h1
         class="flex max-w-5xl flex-wrap items-center justify-center gap-x-[0.28em] gap-y-2 font-display text-smoke"

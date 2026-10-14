@@ -58,9 +58,9 @@ function goTo(i) {
 <template>
   <section id="services" class="relative bg-smoke py-24 sm:py-32">
     <div class="container-x">
-      <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-        <div class="max-w-2xl">
-          <SectionEyebrow :text="t('services.eyebrow')" />
+      <div class="mx-auto max-w-3xl text-center">
+        <div>
+          <SectionEyebrow :text="t('services.eyebrow')" centered />
           <h2 class="mt-5 font-display text-ink" style="font-size: clamp(38px, 6vw, 64px)">
             {{ t('services.title') }}
           </h2>
