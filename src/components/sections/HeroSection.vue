@@ -78,6 +78,7 @@ onMounted(() => {
     <div ref="bg" class="absolute inset-0 will-change-transform">
       <video
         class="h-full w-full object-cover"
+        poster="/marble_bg.webp"
         :autoplay="!reduce"
         :loop="!reduce"
         muted
