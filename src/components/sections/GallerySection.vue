@@ -18,7 +18,7 @@ const images = [
   '/works/work_5.webp',
 ]
 
-const speeds = [5, 2, 3, 6, 3]
+const speeds = [5, 2, 3, 6, 3, ]
 
 const section = ref(null)
 const lightboxImg = ref(null)

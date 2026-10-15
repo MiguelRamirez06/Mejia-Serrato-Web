@@ -35,7 +35,7 @@ function goTo(id) {
       <!-- Logo lockup -->
       <div class="flex flex-col items-center pb-14 text-center">
         <span class="text-xl font-semibold uppercase tracking-[0.28em] text-smoke sm:text-2xl">
-          Mejia Serrato
+          Mejia Hernandez
         </span>
         <span class="mt-2 text-[11px] uppercase tracking-[0.5em] text-gold">
           {{ t('footer.tagline') }}
@@ -105,7 +105,7 @@ function goTo(id) {
 
       <div class="h-px w-full bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
       <div class="py-7 text-center text-[11px] uppercase tracking-[0.2em] text-smoke/40">
-        <p>© {{ year }} Mejia Serrato Stone Restoration. {{ t('footer.rights') }}</p>
+        <p>© {{ year }} Mejia Hernandez Stone Restoration. {{ t('footer.rights') }}</p>
         <p class="mt-3">
           {{ t('footer.developedBy') }}
           <a

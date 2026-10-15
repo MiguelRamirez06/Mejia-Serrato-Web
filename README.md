@@ -1,6 +1,6 @@
-# Mejia Serrato Stone Restoration
+# Mejia Hernandez Stone Restoration
 
-Sitio web de una sola página (one-page) para **Mejia Serrato Stone Restoration**, empresa de restauración de piedra natural (mármol, granito, travertino y caliza) que da servicio en Moreno Valley y el Inland Empire, California.
+Sitio web de una sola página (one-page) para **Mejia Hernandez Stone Restoration**, empresa de restauración de piedra natural (mármol, granito, travertino y caliza) que da servicio en Moreno Valley y el Inland Empire, California.
 
 Enfoque **mobile-first** y estética cinematográfica: animaciones suaves al hacer scroll, video en el hero, comparador "antes y después" y un mosaico editorial de proyectos.
 

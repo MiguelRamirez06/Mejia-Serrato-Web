@@ -72,18 +72,18 @@ onBeforeUnmount(() => {
       <button
         type="button"
         class="group flex items-center gap-3 text-left"
-        :aria-label="'Mejia Serrato Stone Restoration'"
+        :aria-label="'Mejia Hernandez Stone Restoration'"
         @click="goTo('home')"
       >
         <img
           src="/logo.webp"
-          alt="Mejia Serrato Stone Restoration logo"
+          alt="Mejia Hernandez Stone Restoration logo"
           class="h-9 w-auto shrink-0 object-contain transition-transform duration-500 ease-cinematic group-hover:scale-105 sm:h-10"
           fetchpriority="high"
         />
         <span class="flex flex-col">
           <span class="block text-[15px] font-semibold uppercase leading-none tracking-[0.2em] text-smoke sm:text-base">
-            Mejia Serrato
+            Mejia Hernandez
           </span>
           <span class="mt-1 block text-[10px] uppercase leading-none tracking-[0.42em] text-gold sm:text-[11px]">
             {{ t('header.tagline') }}
