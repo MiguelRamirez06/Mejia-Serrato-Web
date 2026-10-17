@@ -84,6 +84,7 @@ function goTo(i) {
               alt=""
               aria-hidden="true"
               loading="lazy"
+              decoding="async"
               class="h-full w-full object-cover transition-transform duration-700 ease-cinematic group-hover:scale-105"
             />
           </div>

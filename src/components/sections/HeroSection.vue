@@ -79,11 +79,12 @@ onMounted(() => {
       <video
         class="h-full w-full object-cover"
         poster="/marble_bg.webp"
+        fetchpriority="high"
         :autoplay="!reduce"
         :loop="!reduce"
         muted
         playsinline
-        preload="auto"
+        preload="metadata"
         disablepictureinpicture
         aria-hidden="true"
       >

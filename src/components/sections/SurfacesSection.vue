@@ -150,6 +150,7 @@ function selectAndAnimate(tab) {
               :src="images[activeTab]"
               :alt="t(`surfaces.${activeTab}.title`)"
               loading="lazy"
+              decoding="async"
               class="aspect-[4/3] w-full object-cover"
             />
           </div>
